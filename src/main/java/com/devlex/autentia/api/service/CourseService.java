@@ -19,6 +19,14 @@ public class CourseService{
         return courseRepository.getAllActiveCourses();
     }
 
+    public Course getCourseById(int id){
+        return  courseRepository.getCourseById(id);
+    }
+
+    public void deleteCourse(int id){
+        courseRepository.deleteCourse(id);
+    }
+
     public void addCourse(Course course) {
         courseRepository.addCourse(course);
     }

@@ -19,6 +19,14 @@ public class CourseRepository {
         return courseMapper.findAll();
     }
 
+    public Course getCourseById(int id){
+        return courseMapper.findById(id);
+    }
+
+    public void deleteCourse(int id){
+        courseMapper.deleteById(id);
+    }
+
     public void addCourse(Course course) {
         courseMapper.save(course);
     }
