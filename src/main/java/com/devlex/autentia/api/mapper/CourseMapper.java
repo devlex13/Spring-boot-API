@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface CourseMapper extends CrudRepository<Course, Integer> {
     List<Course> findAll();
+
     Course findById(int id);
+
 }

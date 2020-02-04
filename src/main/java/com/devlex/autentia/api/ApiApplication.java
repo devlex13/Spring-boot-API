@@ -1,7 +1,5 @@
 package com.devlex.autentia.api;
 
-import com.devlex.autentia.api.mapper.CourseMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

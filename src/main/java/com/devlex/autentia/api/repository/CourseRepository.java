@@ -11,7 +11,7 @@ public class CourseRepository {
 
     private CourseMapper courseMapper;
 
-    public CourseRepository(CourseMapper courseMapper){
+    public CourseRepository(CourseMapper courseMapper) {
         this.courseMapper = courseMapper;
     }
 
@@ -19,11 +19,11 @@ public class CourseRepository {
         return courseMapper.findAll();
     }
 
-    public Course getCourseById(int id){
+    public Course getCourseById(int id) {
         return courseMapper.findById(id);
     }
 
-    public void deleteCourse(int id){
+    public void deleteCourse(int id) {
         courseMapper.deleteById(id);
     }
 

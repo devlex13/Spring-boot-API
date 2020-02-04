@@ -1,11 +1,10 @@
 package com.devlex.autentia.api.domain;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "courses")
-public class Course implements Serializable {
+public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +15,7 @@ public class Course implements Serializable {
     private String level;
     private int hours;
 
-    public Course(){
+    public Course() {
 
     }
 

@@ -10,17 +10,15 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String surname1;
-    private String surname2;
+    private String surname;
 
     public Teacher() {
     }
 
-    public Teacher(int id, String name, String surname1, String surname2) {
+    public Teacher(int id, String name, String surname) {
         this.id = id;
         this.name = name;
-        this.surname1 = surname1;
-        this.surname2 = surname2;
+        this.surname = surname;
     }
 
     public int getId() {
@@ -40,18 +38,10 @@ public class Teacher {
     }
 
     public String getSurname1() {
-        return surname1;
+        return surname;
     }
 
     public void setSurname1(String surname1) {
-        this.surname1 = surname1;
-    }
-
-    public String getSurname2() {
-        return surname2;
-    }
-
-    public void setSurname2(String surname2) {
-        this.surname2 = surname2;
+        this.surname = surname1;
     }
 }

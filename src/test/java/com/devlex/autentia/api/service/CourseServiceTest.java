@@ -14,32 +14,28 @@ public class CourseServiceTest {
     private CourseService courseService;
 
     @Before
-    public void init(){
+    public void init() {
         courseRepository = mock(CourseRepository.class);
         courseService = new CourseService(courseRepository);
     }
 
     @Test
-    public void shouldReturnAllActiveCourses(){
-        //Given
-
-
-        //When
-        Iterable<Course> cursoList = courseService.getAllActiveCourses();
-
-        //Then
+    public void shouldReturnAllActiveCourses() {
+        // Given
+        courseService.getAllActiveCourses();
+        // Then
         verify(courseRepository, times(1)).getAllActiveCourses();
     }
 
     @Test
-    public void shouldAddCourse(){
-        //Given
-        Course course =  new Course(true, 1, "Java 01", "Basico", 23);
+    public void shouldAddCourse() {
+        // Given
+        Course course = new Course(true, 1, "Java 01", "Basico", 23);
 
-        //When
+        // When
         courseService.addCourse(course);
 
-        //Then
+        // Then
         verify(courseRepository, times(1)).addCourse(course);
     }
 

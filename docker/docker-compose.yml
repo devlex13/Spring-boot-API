@@ -1,0 +1,6 @@
+version: "3.3"
+services:
+  api:
+    image: spring-boot/api-docker
+    ports:
+      - "8080:8080"

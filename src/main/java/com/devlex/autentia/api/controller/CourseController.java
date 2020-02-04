@@ -14,18 +14,22 @@ public class CourseController {
     @Autowired
     CourseService courseService;
 
+    public CourseController(CourseService courseService) {
+        this.courseService = courseService;
+    }
+
     @RequestMapping(value = "/courses")
     public List<Course> getAllCourses() {
         return courseService.getAllActiveCourses();
     }
 
     @RequestMapping(value = "/courses/{id}")
-    public Course getCourse(@PathVariable("id") int id){
+    public Course getCourse(@PathVariable("id") int id) {
         return courseService.getCourseById(id);
     }
 
     @DeleteMapping(value = "/courses/delete/{id}")
-    public ResponseEntity deleteCourse(@PathVariable("id") int id){
+    public ResponseEntity deleteCourse(@PathVariable("id") int id) {
         courseService.deleteCourse(id);
         return ResponseEntity.ok().build();
     }
