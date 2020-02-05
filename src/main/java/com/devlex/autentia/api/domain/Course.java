@@ -1,9 +1,17 @@
 package com.devlex.autentia.api.domain;
 
 import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "courses")
+@NoArgsConstructor
+@Data
+@Builder(toBuilder = true)
+@AllArgsConstructor
 public class Course {
 
     @Id
@@ -14,64 +22,4 @@ public class Course {
     private String title;
     private String level;
     private int hours;
-
-    public Course() {
-
-    }
-
-    public Course(boolean active, int teacher, String title, String level, int hours) {
-        this.active = active;
-        this.teacher = teacher;
-        this.title = title;
-        this.level = level;
-        this.hours = hours;
-    }
-
-    public int getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(int teacher) {
-        this.teacher = teacher;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-    public int getHours() {
-        return hours;
-    }
-
-    public void setHours(int hours) {
-        this.hours = hours;
-    }
 }

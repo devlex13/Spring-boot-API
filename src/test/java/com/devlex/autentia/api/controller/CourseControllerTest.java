@@ -31,7 +31,7 @@ public class CourseControllerTest {
     @Test
     public void shouldAddOneCourse() {
         // Given
-        Course course = new Course(true, 1, "Java 01", "Basico", 24);
+        Course course = Course.builder().active(true).teacher(1).title("Java 01").level("Basico").hours(23).build();
 
         // When
         courseController.addCourse(course);

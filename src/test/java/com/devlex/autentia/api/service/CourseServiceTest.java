@@ -30,7 +30,7 @@ public class CourseServiceTest {
     @Test
     public void shouldAddCourse() {
         // Given
-        Course course = new Course(true, 1, "Java 01", "Basico", 23);
+        Course course = Course.builder().active(true).teacher(1).title("Java 01").level("Basico").hours(23).build();
 
         // When
         courseService.addCourse(course);

@@ -39,5 +39,4 @@ public class CourseController {
     public void addCourse(@RequestBody Course course) {
         courseService.addCourse(course);
     }
-
 }
