@@ -2,15 +2,17 @@ package com.devlex.autentia.api.domain;
 
 import javax.persistence.*;
 
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "teachers")
-@Getter
-@Setter
 @NoArgsConstructor
+@Data
+@Builder(toBuilder = true)
+@AllArgsConstructor
 public class Teacher {
 
     @Id
@@ -18,10 +20,4 @@ public class Teacher {
     private int id;
     private String name;
     private String surname;
-
-    public Teacher(int id, String name, String surname) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-    }
 }
