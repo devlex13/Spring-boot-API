@@ -12,16 +12,12 @@ import java.util.List;
 public class CourseController {
 
     @Autowired
-    CourseService courseService;
+    private CourseService courseService;
 
-    public CourseController(CourseService courseService) {
-        this.courseService = courseService;
-    }
+    CourseController(CourseService courseService) { this.courseService = courseService; }
 
     @RequestMapping(value = "/courses")
-    public List<Course> getAllCourses() {
-        return courseService.getAllActiveCourses();
-    }
+    public List<Course> getAllCourses() { return courseService.getAllActiveCourses(); }
 
     @RequestMapping(value = "/courses/{id}")
     public Course getCourse(@PathVariable("id") int id) {

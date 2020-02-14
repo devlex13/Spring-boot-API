@@ -1,6 +1,26 @@
 version: "3.3"
 services:
+  postgres:
+    image: postgres
+    restart: always
+    container_name: db_api
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: alex
+      POSTGRES_PASSWORD: alex
+      POSTGRES_DB: db_api
+    volumes:
+      - ./var/lib/postgresql:/var/lib/postgresql
   api:
     image: spring-boot/api-docker
     ports:
       - "8080:8080"
+    depends_on:
+      - postgres
+  sonarqube:
+    image: sonarqube:7.1
+    ports:
+      - 9000:9000
+      - 9092:9092
+    container_name: cursos-sonarqube
